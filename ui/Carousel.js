@@ -18,3 +18,31 @@ export function createCarousel(sectionBlocks) {
         </div>
       `;
 }
+
+export function initializeCarousel() {
+	let carousel = new Splide('#image-carousel', {
+		width: '500px',
+		heightRatio: 640 / 500,
+		classes: {
+			arrows: 'splide__arrows',
+			arrow: 'splide__arrow arrows',
+			prev: 'splide__arrow--prev move-arrow-left ',
+			next: 'splide__arrow--next move-arrow-right',
+			pagination: 'hidden',
+		},
+		breakpoints: {
+			990: {
+				width: '450px',
+				// height: '496px',
+				heightRatio: 640 / 500,
+			},
+			749: {
+				width: '350px',
+				heightRatio: 640 / 500,
+			},
+		},
+	});
+	carousel.mount();
+
+	return carousel;
+}
