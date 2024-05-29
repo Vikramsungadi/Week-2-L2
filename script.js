@@ -11,9 +11,6 @@ function updateContent(slideIndex, sectionBlocks) {
 	const productDetailsPrice = document.querySelector('.product-details--price');
 	const productDetails = document.querySelector('.product-details');
 	let bgGradient = document.querySelector('.bg-gradient');
-	// let bgGradient2 = document.querySelector('.bg-gradient2');
-
-	// let gradient1opacity = getComputedStyle(bgGradient).opacity;
 
 	// Apply fade out animation
 	bgGradient.style.opacity = 0.6;
@@ -35,16 +32,7 @@ function updateContent(slideIndex, sectionBlocks) {
 		productDetails.classList.remove('fade-out');
 		productDetails.classList.add('fade-in');
 		bgGradient.style.opacity = 1;
-
-		// if (gradient1opacity === 0) {
-		// 	bgGradient.style.opacity = 1;
-		// 	bgGradient2.style.opacity = 0;
-		// } else {
-		// 	bgGradient.style.opacity = 0;
-		// 	bgGradient2.style.opacity = 1;
-		// }
-		// bgGradient.style.background = currentBlock.color;
-	}); // Same duration as the fade-out animation
+	});
 }
 
 // Function to change body color
@@ -103,21 +91,6 @@ fetch('./data.json')
 		carousel.on('move', (e) => {
 			let index = e;
 			updateContent(index, data.sectionBlocks);
-			// changeBodyColor(data.sectionBlocks[index].color);
-
-			// let gradient1opacity = getComputedStyle(document.querySelector('.bg-gradient')).opacity;
-			// let elem;
-			// if (gradient1opacity === 0) {
-			// 	elem = '.bg-gradient';
-			// } else {
-			// 	elem = '.bg-gradient2';
-			// }
-			// document.querySelector('.splide__arrow--next').addEventListener('mouseover', () => {
-			// 	document.querySelector(elem).style.backgroundImage = data.sectionBlocks[e + 1].color;
-			// });
-			// document.querySelector('.splide__arrow--prev').addEventListener('mouseover', () => {
-			// 	document.querySelector(elem).style.backgroundImage = data.sectionBlocks[e >= 1 ? e - 1 : e + 1].color;
-			// });
 		});
 
 		let menuBtn = document.querySelector('.menu-btn');
@@ -136,30 +109,3 @@ fetch('./data.json')
 		menuBtn.addEventListener('click', toggleSideMenu);
 		closeMenu.addEventListener('click', toggleSideMenu);
 	});
-
-// document.addEventListener('DOMContentLoaded', function () {
-// 	let carousel = new Splide('#image-carousel', {
-// 		width: '500px',
-// 		// height: '640px',
-// 		heightRatio: 640 / 500,
-// 		classes: {
-// 			arrows: 'splide__arrows',
-// 			arrow: 'splide__arrow arrows',
-// 			prev: 'splide__arrow--prev move-arrow-left ',
-// 			next: 'splide__arrow--next move-arrow-right',
-// 			pagination: 'hidden',
-// 		},
-// 		breakpoints: {
-// 			990: {
-// 				width: '400px',
-// 				// height: '496px',
-// 				heightRatio: 640 / 500,
-// 			},
-// 		},
-// 	});
-// 	carousel.mount();
-
-// 	carousel.on('move', (e) => {
-// 		console.log(e);
-// 	});
-// });
