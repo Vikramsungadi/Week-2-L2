@@ -1,0 +1,3 @@
+- Created Seperated UI folder for Header.js, Carousel.js, SideMenu.js, product.js.
+- Fetched data from data.json and passed required data to each component listed above.
+- Used Splide.js move listener to change data dynamically.
